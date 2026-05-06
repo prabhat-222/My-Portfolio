@@ -88,8 +88,8 @@ const activeProject = projects[activeIndex]
           isMobile ? "-mt-4" : ""
         }`}>
           {projects.map((project, idx) =>(
-            <div key={project.title} className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${activeIndex === idx ? "opacity-100 z-20" : "opacity-0 z-0 sm:z-10"}`}
-            style={{width: "85%", maxWidth: "1200px"}}
+            <div key={project.title} className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 pointer-events-none ${activeIndex === idx ? "opacity-100 z-20" : "opacity-0 z-0 sm:z-10"}`}
+            style={{width: "80%", maxWidth: "1200px"}}
             >
               <AnimatePresence mode='wait'>
                 {activeIndex === idx && (
@@ -98,7 +98,7 @@ const activeProject = projects[activeIndex]
                   animate={{opacity: 1, y: 0}}
                   exit={{opacity: 0, y: 30}}
                   transition={{duration: 0.5, ease: "easeOut"}}
-                  className={`block text-center text-[clamp(1rem,4vw,3rem)] text-white/95 sm:absolute sm:-top-20 sm:left-[35%] lg:left-[-5%] sm:mb-0 italic font-semibold ${
+                  className={`block mt-1 md:mt-0 text-center text-[clamp(1rem,4vw,3rem)] text-white/95 sm:absolute sm:-top-12 sm:left-[35%] lg:left-[7%] sm:mb-0 italic font-semibold ${
                     isMobile ? "-mt-24" : ""
                   }`}
                   style={{
@@ -112,7 +112,9 @@ const activeProject = projects[activeIndex]
                 )}
               </AnimatePresence>
 
-                <div className={`relative w-full overflow-hidden bg-black/20 shadow-2xl`}>
+                <div className={`relative w-[80%] mx-auto overflow-hidden bg-black/20 shadow-2xl md:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] ${isMobile ? "mb-6 rounded-lg" : "mb-10 sm:mb-12 rounded-xl"} h-[62vh] sm:h-[66vh]`}
+                style={{zIndex: 10, transition: "box-shadow 250ms ease"}}
+                >
                   <img src={project.image} alt={project.title} className='w-full h-full object-cover drop-shadow-xl md:drop-shadow-2xl' 
                   style={{
                     position: "relative",
@@ -128,7 +130,13 @@ const activeProject = projects[activeIndex]
           ))}          
         </div>
 
+        <div className={`absolute ${isMobile ? "bottom-4" : "bottom-4"}`}>
+        <a target='_blank' rel='noopener noreferrer' className=' inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-300 transition-all z-30' aria-label={`view ${activeProject?.title}`} href={activeProject?.link}>View Project</a>
       </div>
+
+      </div>
+
+      
 
     </section>
   )
