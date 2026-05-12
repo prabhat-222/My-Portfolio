@@ -27,7 +27,6 @@ export default function OverlayMenu({isOpen, onClose}) {
                     "Skills",
                     "Projects",
                     "Experience",
-                    "Testimonials",
                     "Contact",
                    ].map((item, idx) => (
                       <motion.li key={idx}
@@ -35,7 +34,7 @@ export default function OverlayMenu({isOpen, onClose}) {
                       animate ={{opacity: 1, y: 0}}
                       transition={{delay: 0.3 + idx * 0.1}}
                       >
-                        <a href={`#${item.toLocaleLowerCase()}`} onClick={onclose} className='text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300'>
+                        <a href={`#${item.toLocaleLowerCase()}`} onClick={onClose} className='text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300'>
                           {item}
                         </a>
                       </motion.li>

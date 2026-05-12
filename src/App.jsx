@@ -5,7 +5,6 @@ import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
-import Testimoneals from "./sections/Testimoneals";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 // import ParticlesBackgrounds from "./components/ParticlesBackgrounds";
@@ -31,7 +30,6 @@ export default function App() {
       <Skills />
       <Projects />
       <Experience />
-      <Testimoneals />
       <Contact />
       <Footer />
     </div>

@@ -113,7 +113,7 @@ export default function Projects() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 30 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className={`block mt-1 md:mt-0 text-center text-[clamp(1rem,4vw,3rem)] text-white/95 sm:absolute sm:-top-12 sm:left-[35%] lg:left-[7%] sm:mb-0 italic font-semibold ${
+                    className={`block mt-1 md:mt-0 text-center text-[clamp(2rem,5vw,4rem)] text-white/95 sm:absolute sm:-top-16 sm:left-[35%] lg:left-[7%] sm:mb-0 italic font-semibold ${
                       isMobile ? "-mt-24" : ""
                     }`}
                     style={{
